@@ -30,8 +30,8 @@ Response: **38**
 
 ### Q6 - Ahh there you are! My prize ⭐⭐SPARTANTS⭐⭐! MY MARES AND MY STALLIONS! We need to re-target all of our Customers is Paris! Get me information on these clients.
 
-- Query: ** **
-	- Response: ** **
+- Query: **SELECT * FROM Customers WHERE City = 'Paris';**
+	- Response: **2**
 
 ### Q7 - WAIT! Where are you going? (...) These clients are hard to sell too! We need more intel.. Can you find out, from these clients from Paris, whom orders the most by quantity? Who are our top 5 clients?
 
