@@ -29,15 +29,27 @@ SELECT CompanyName, ContactName, Phone, City FROM Suppliers WHERE Fax is NULL;**
 Response: **38**
 
 ### Q6 - Ahh there you are! My prize ⭐⭐SPARTANTS⭐⭐! MY MARES AND MY STALLIONS! We need to re-target all of our Customers is Paris! Get me information on these clients.
-
+ 
 - Query: **SELECT * FROM Customers WHERE City = 'Paris';**
 	- Response: **2**
 
 ### Q7 - WAIT! Where are you going? (...) These clients are hard to sell too! We need more intel.. Can you find out, from these clients from Paris, whom orders the most by quantity? Who are our top 5 clients?
 
-- Query:
-	- Response:
+- Query: 
 
+```SQL
+SELECT TOP 5 COUNT(Orders.OrderID) as 'Number of Orders.', Customers.CompanyName
+FROM Orders
+RIGHT JOIN Customers
+ON Orders.CustomerID = Customers.CustomerID
+WHERE Customers.City = 'Paris'
+GROUP BY Customers.CompanyName
+ORDER BY COUNT(Orders.OrderID) DESC;
+```
+- Response:
+```
+
+```
 ### Q8 - OMG What are you? Some kind of SQL Guardian Angel? THIS IS AMAZING! May God pay you handsomely 😸 because I have no cash on me!.. I do have one more request. I need to know more about these these Paris client. Can you find out which ones their deliveries took longer than 10 days? Display the Business/client name, contact name, all their contact details (don't forget the fax!), as well as the number of deliveries that where overdue! Just add a column named: 'Number overdue orders'! simple, thank you!
 
 - Query:
