@@ -2,8 +2,9 @@
 
 ### Q1 - How many orders in NWDB?
 
-- Query: **SELECT COUNT(*) FROM Orders;**
-	- Response: **830**
+- Query: ```sql
+ **SELECT COUNT(*) FROM Orders;**
+	- Response: **830**```
 
 ### Q2 - How many order that the Ship City is Rio de Janeiro?
 
